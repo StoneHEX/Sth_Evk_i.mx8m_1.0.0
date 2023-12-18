@@ -1,21 +1,21 @@
 diff --git a/board/stonehex/evk_i.mx8m/sth_pkgs.sh b/board/stonehex/evk_i.mx8m/sth_pkgs.sh
 new file mode 100755
-index 0000000000..4f593356c0
+index 0000000000..0c424f79d5
 --- /dev/null
 +++ b/board/stonehex/evk_i.mx8m/sth_pkgs.sh
 @@ -0,0 +1,32 @@
 +#!/bin/bash
-+REVENTON_PKG=Sth_Evk_i.mx8m_1.0.0
++IMX8EVK_PKG=Sth_Evk_i.mx8m_1.0.0
 +STHFS_PKG=SthFS_1.0.0
 +
-+if [ ! -d ${BR2_DL_DIR}/${REVENTON_PKG} ]; then
-+        echo "**** ${REVENTON_PKG} cloning   ****"
++if [ ! -d ${BR2_DL_DIR}/${IMX8EVK_PKG} ]; then
++        echo "**** ${IMX8EVK_PKG} cloning   ****"
 +        pushd ${BR2_DL_DIR}
-+        git clone https://github.com/StoneHEX/${REVENTON_PKG}.git
++        git clone https://github.com/StoneHEX/${IMX8EVK_PKG}.git
 +        popd
 +else
-+        echo "**** ${REVENTON_PKG} present,updating  ****"
-+        pushd ${BR2_DL_DIR}/${REVENTON_PKG}
++        echo "**** ${IMX8EVK_PKG} present,updating  ****"
++        pushd ${BR2_DL_DIR}/${IMX8EVK_PKG}
 +        git pull
 +        popd
 +fi
@@ -31,8 +31,8 @@ index 0000000000..4f593356c0
 +        git pull
 +        popd
 +fi
-+rm -rf output/build/${REVENTON_PKG} output/build/${STHFS_PKG}
-+cp -a ${BR2_DL_DIR}/${REVENTON_PKG} output/build/.
++rm -rf output/build/${IMX8EVK_PKG} output/build/${STHFS_PKG}
++cp -a ${BR2_DL_DIR}/${IMX8EVK_PKG} output/build/.
 +cp -a ${BR2_DL_DIR}/${STHFS_PKG} output/build/.
 +
 +
