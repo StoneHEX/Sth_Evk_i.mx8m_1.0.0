@@ -38,13 +38,13 @@ index 0000000000..0c424f79d5
 +
 diff --git a/configs/sth_evk_i.mx8m_defconfig b/configs/sth_evk_i.mx8m_defconfig
 new file mode 100644
-index 0000000000..219de9ec11
+index 0000000000..2643c2424e
 --- /dev/null
 +++ b/configs/sth_evk_i.mx8m_defconfig
 @@ -0,0 +1,3790 @@
 +#
 +# Automatically generated file; DO NOT EDIT.
-+# Buildroot 2023.08.4 Configuration
++# Buildroot 2023.08.4-dirty Configuration
 +#
 +BR2_HAVE_DOT_CONFIG=y
 +BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -512,7 +512,7 @@ index 0000000000..219de9ec11
 +BR2_ROOTFS_PRE_BUILD_SCRIPT=""
 +BR2_ROOTFS_POST_BUILD_SCRIPT=""
 +BR2_ROOTFS_POST_FAKEROOT_SCRIPT=""
-+BR2_ROOTFS_POST_IMAGE_SCRIPT="board/freescale/common/imx/imx8-bootloader-prepare.sh board/freescale/common/imx/post-image.sh"
++BR2_ROOTFS_POST_IMAGE_SCRIPT="board/stonehex/evk_i.mx8m/sth_pkgs.sh  board/freescale/common/imx/imx8-bootloader-prepare.sh board/freescale/common/imx/post-image.sh"
 +BR2_ROOTFS_POST_SCRIPT_ARGS="${UBOOT_DIR}/arch/arm/dts/imx8mm-evk.dtb"
 +
 +#
@@ -2813,8 +2813,8 @@ index 0000000000..219de9ec11
 +BR2_TARGET_ROOTFS_EXT2_INODE_SIZE=256
 +BR2_TARGET_ROOTFS_EXT2_RESBLKS=5
 +BR2_TARGET_ROOTFS_EXT2_MKFS_OPTIONS="-O ^64bit"
-+BR2_TARGET_ROOTFS_EXT2_NONE=y
-+# BR2_TARGET_ROOTFS_EXT2_GZIP is not set
++# BR2_TARGET_ROOTFS_EXT2_NONE is not set
++BR2_TARGET_ROOTFS_EXT2_GZIP=y
 +# BR2_TARGET_ROOTFS_EXT2_BZIP2 is not set
 +# BR2_TARGET_ROOTFS_EXT2_LZ4 is not set
 +# BR2_TARGET_ROOTFS_EXT2_LZMA is not set
