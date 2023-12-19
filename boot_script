@@ -1,4 +1,4 @@
-fatload mmc 1:1 $fdt_addr imx8mm-var-som-symphony.dtb 
+fatload mmc 1:1 $fdt_addr imx8mm-evk.dtb
 fatload mmc 1:1 $loadaddr Image
 fatload mmc 1:1 $initrd_addr uInitrd
 setenv rdsize		"524288"
