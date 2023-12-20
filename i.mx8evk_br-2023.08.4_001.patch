@@ -1,3 +1,44 @@
+diff --git a/board/stonehex/evk_i.mx8m/kernel_patches/dtb_patch_001.patch b/board/stonehex/evk_i.mx8m/kernel_patches/dtb_patch_001.patch
+new file mode 100644
+index 0000000000..5072b392b1
+--- /dev/null
++++ b/board/stonehex/evk_i.mx8m/kernel_patches/dtb_patch_001.patch
+@@ -0,0 +1,26 @@
++diff --git a/arch/arm64/boot/dts/freescale/imx8mm-ddr4-evk-revb-rm67191.dts b/arch/arm64/boot/dts/freescale/imx8mm-ddr4-evk-revb-rm67191.dts
++index 2b65f3306b80..4ab03e5d554b 100644
++--- a/arch/arm64/boot/dts/freescale/imx8mm-ddr4-evk-revb-rm67191.dts
+++++ b/arch/arm64/boot/dts/freescale/imx8mm-ddr4-evk-revb-rm67191.dts
++@@ -14,7 +14,7 @@ panel@0 {
++ 		compatible = "raydium,rm67191";
++ 		reg = <0>;
++ 		pinctrl-0 = <&pinctrl_mipi_dsi_en>;
++-		reset-gpio = <&gpio1 8 GPIO_ACTIVE_LOW>;
+++		reset-gpio = <&gpio1 8 GPIO_ACTIVE_HIGH>;
++ 		dsi-lanes = <4>;
++ 		video-mode = <2>;	/* 0: burst mode
++ 					 * 1: non-burst mode with sync event
++diff --git a/arch/arm64/boot/dts/freescale/imx8mm-ddr4-evk-rm67191.dts b/arch/arm64/boot/dts/freescale/imx8mm-ddr4-evk-rm67191.dts
++index 889a6738a00b..ac017aa10de6 100644
++--- a/arch/arm64/boot/dts/freescale/imx8mm-ddr4-evk-rm67191.dts
+++++ b/arch/arm64/boot/dts/freescale/imx8mm-ddr4-evk-rm67191.dts
++@@ -14,7 +14,7 @@ panel@0 {
++ 		compatible = "raydium,rm67191";
++ 		reg = <0>;
++ 		pinctrl-0 = <&pinctrl_mipi_dsi_en>;
++-		reset-gpio = <&gpio1 8 GPIO_ACTIVE_LOW>;
+++		reset-gpio = <&gpio1 8 GPIO_ACTIVE_HIGH>;
++ 		dsi-lanes = <4>;
++ 		video-mode = <2>;	/* 0: burst mode
++ 					 * 1: non-burst mode with sync event
+diff --git a/board/stonehex/evk_i.mx8m/patches/dtb_dsi_001.patch b/board/stonehex/evk_i.mx8m/patches/dtb_dsi_001.patch
+deleted file mode 100644
+index e69de29bb2..0000000000
+diff --git a/board/stonehex/evk_i.mx8m/patches/dtb_dsi_002.patch b/board/stonehex/evk_i.mx8m/patches/dtb_dsi_002.patch
+deleted file mode 100644
+index e69de29bb2..0000000000
+diff --git a/board/stonehex/evk_i.mx8m/patches/kernel_dsi_001.patch b/board/stonehex/evk_i.mx8m/patches/kernel_dsi_001.patch
+deleted file mode 100644
+index e69de29bb2..0000000000
 diff --git a/board/stonehex/evk_i.mx8m/sth_pkgs.sh b/board/stonehex/evk_i.mx8m/sth_pkgs.sh
 new file mode 100755
 index 0000000000..0c424f79d5
@@ -38,7 +79,7 @@ index 0000000000..0c424f79d5
 +
 diff --git a/configs/sth_evk_i.mx8m_defconfig b/configs/sth_evk_i.mx8m_defconfig
 new file mode 100644
-index 0000000000..77dd0a830f
+index 0000000000..ff60567995
 --- /dev/null
 +++ b/configs/sth_evk_i.mx8m_defconfig
 @@ -0,0 +1,3790 @@
@@ -527,9 +568,9 @@ index 0000000000..77dd0a830f
 +# BR2_LINUX_KERNEL_CUSTOM_GIT is not set
 +# BR2_LINUX_KERNEL_CUSTOM_HG is not set
 +# BR2_LINUX_KERNEL_CUSTOM_SVN is not set
-+BR2_LINUX_KERNEL_CUSTOM_TARBALL_LOCATION="$(call github,nxp-imx,linux-imx,lf-6.1.y)/linux-imx-lf-6.1.tar.gz"
++BR2_LINUX_KERNEL_CUSTOM_TARBALL_LOCATION="$(call github,nxp-imx,linux-imx,lf-6.1.y)/linux-imx-lf-6.1.y.tar.gz"
 +BR2_LINUX_KERNEL_VERSION="custom"
-+BR2_LINUX_KERNEL_PATCH=""
++BR2_LINUX_KERNEL_PATCH="board/stonehex/evk_i.mx8m/kernel_patches/dtb_patch_001.patch"
 +BR2_LINUX_KERNEL_USE_DEFCONFIG=y
 +# BR2_LINUX_KERNEL_USE_ARCH_DEFAULT_CONFIG is not set
 +# BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG is not set
@@ -548,7 +589,7 @@ index 0000000000..77dd0a830f
 +# BR2_LINUX_KERNEL_ZSTD is not set
 +BR2_LINUX_KERNEL_DTS_SUPPORT=y
 +# BR2_LINUX_KERNEL_DTB_IS_SELF_BUILT is not set
-+BR2_LINUX_KERNEL_INTREE_DTS_NAME="freescale/imx8mm-evk freescale/imx8mm-evk-revb-qca-wifi freescale/imx8mm-evk-rm67191"
++BR2_LINUX_KERNEL_INTREE_DTS_NAME="freescale/imx8mm-evk freescale/imx8mm-evk-revb-qca-wifi freescale/imx8mm-ddr4-evk-revb-rm67191.dtb"
 +BR2_LINUX_KERNEL_CUSTOM_DTS_PATH=""
 +# BR2_LINUX_KERNEL_DTB_KEEP_DIRNAME is not set
 +# BR2_LINUX_KERNEL_DTB_OVERLAY_SUPPORT is not set

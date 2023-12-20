@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2023.08.4 Configuration
+# Buildroot 2023.08.4-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -350,7 +350,7 @@ BR2_XZCAT="xzcat"
 BR2_LZCAT="lzip -d -c"
 BR2_TAR_OPTIONS=""
 BR2_DEFCONFIG="/Devel/buildroot/imx8_evk_br-2023.08.4/configs/freescale_imx8mmevk_defconfig"
-BR2_DL_DIR="$(TOPDIR)/dl"
+BR2_DL_DIR="../Downloads"
 BR2_HOST_DIR="$(BASE_DIR)/host"
 
 #
@@ -483,9 +483,9 @@ BR2_LINUX_KERNEL_CUSTOM_TARBALL=y
 # BR2_LINUX_KERNEL_CUSTOM_GIT is not set
 # BR2_LINUX_KERNEL_CUSTOM_HG is not set
 # BR2_LINUX_KERNEL_CUSTOM_SVN is not set
-BR2_LINUX_KERNEL_CUSTOM_TARBALL_LOCATION="$(call github,nxp-imx,linux-imx,lf-5.10.y-1.0.0)/linux-imx-lf-5.10.y-1.0.0.tar.gz"
+BR2_LINUX_KERNEL_CUSTOM_TARBALL_LOCATION="$(call github,nxp-imx,linux-imx,lf-6.1.y)/linux-imx-lf-6.1.y.tar.gz"
 BR2_LINUX_KERNEL_VERSION="custom"
-BR2_LINUX_KERNEL_PATCH="board"
+BR2_LINUX_KERNEL_PATCH="board/stonehex/evk_i.mx8m/kernel_patches/dtb_patch_001.patch"
 BR2_LINUX_KERNEL_USE_DEFCONFIG=y
 # BR2_LINUX_KERNEL_USE_ARCH_DEFAULT_CONFIG is not set
 # BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG is not set
@@ -504,7 +504,7 @@ BR2_LINUX_KERNEL_GZIP=y
 # BR2_LINUX_KERNEL_ZSTD is not set
 BR2_LINUX_KERNEL_DTS_SUPPORT=y
 # BR2_LINUX_KERNEL_DTB_IS_SELF_BUILT is not set
-BR2_LINUX_KERNEL_INTREE_DTS_NAME="freescale/imx8mm-evk freescale/imx8mm-evk-revb-qca-wifi freescale/imx8mm-evk-rm67191"
+BR2_LINUX_KERNEL_INTREE_DTS_NAME="freescale/imx8mm-evk freescale/imx8mm-evk-revb-qca-wifi freescale/imx8mm-ddr4-evk-revb-rm67191.dtb"
 BR2_LINUX_KERNEL_CUSTOM_DTS_PATH=""
 # BR2_LINUX_KERNEL_DTB_KEEP_DIRNAME is not set
 # BR2_LINUX_KERNEL_DTB_OVERLAY_SUPPORT is not set
