@@ -13010,7 +13010,7 @@ index 0000000000..b7add5def5
 +# BR2_TARGET_UBOOT_NETWORK is not set
 diff --git a/configs/sth_evk_i.mx8m_defconfig b/configs/sth_evk_i.mx8m_defconfig
 new file mode 100644
-index 0000000000..896677c4d3
+index 0000000000..e1b8a301a2
 --- /dev/null
 +++ b/configs/sth_evk_i.mx8m_defconfig
 @@ -0,0 +1,3790 @@
@@ -13484,7 +13484,7 @@ index 0000000000..896677c4d3
 +BR2_ROOTFS_PRE_BUILD_SCRIPT=""
 +BR2_ROOTFS_POST_BUILD_SCRIPT="board/stonehex/evk_i.mx8m/evk_i.mx8m_sthfs-prepare.sh"
 +BR2_ROOTFS_POST_FAKEROOT_SCRIPT=""
-+BR2_ROOTFS_POST_IMAGE_SCRIPT="board/freescale/common/imx/imx8-bootloader-prepare.sh board/freescale/common/imx/post-image.sh"
++BR2_ROOTFS_POST_IMAGE_SCRIPT="board/stonehex/evk_i.mx8m/evk_i.mx8m_sth_createFS.sh board/freescale/common/imx/imx8-bootloader-prepare.sh board/freescale/common/imx/post-image.sh"
 +BR2_ROOTFS_POST_SCRIPT_ARGS="${UBOOT_DIR}/arch/arm/dts/imx8mm-evk.dtb"
 +
 +#
