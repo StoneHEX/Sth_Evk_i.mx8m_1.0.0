@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2023.08.4-dirty Configuration
+# Buildroot 2023.08.4 Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -466,9 +466,9 @@ BR2_GENERATE_LOCALE=""
 BR2_ROOTFS_USERS_TABLES=""
 BR2_ROOTFS_OVERLAY=""
 BR2_ROOTFS_PRE_BUILD_SCRIPT=""
-BR2_ROOTFS_POST_BUILD_SCRIPT=""
+BR2_ROOTFS_POST_BUILD_SCRIPT="board/stonehex/evk_i.mx8m/evk_i.mx8m_sthfs-prepare.sh"
 BR2_ROOTFS_POST_FAKEROOT_SCRIPT=""
-BR2_ROOTFS_POST_IMAGE_SCRIPT="board/stonehex/evk_i.mx8m/sth_pkgs.sh output/build/SthFS_1.0.0/sthfs_fs-prepare.sh board/freescale/common/imx/imx8-bootloader-prepare.sh board/freescale/common/imx/post-image.sh"
+BR2_ROOTFS_POST_IMAGE_SCRIPT="board/freescale/common/imx/imx8-bootloader-prepare.sh board/freescale/common/imx/post-image.sh"
 BR2_ROOTFS_POST_SCRIPT_ARGS="${UBOOT_DIR}/arch/arm/dts/imx8mm-evk.dtb"
 
 #
@@ -486,10 +486,10 @@ BR2_LINUX_KERNEL_CUSTOM_TARBALL=y
 BR2_LINUX_KERNEL_CUSTOM_TARBALL_LOCATION="$(call github,nxp-imx,linux-imx,lf-6.1.y)/linux-imx-lf-6.1.y.tar.gz"
 BR2_LINUX_KERNEL_VERSION="custom"
 BR2_LINUX_KERNEL_PATCH="board/stonehex/evk_i.mx8m/kernel_patches/dtb_patch_001.patch"
-BR2_LINUX_KERNEL_USE_DEFCONFIG=y
+# BR2_LINUX_KERNEL_USE_DEFCONFIG is not set
 # BR2_LINUX_KERNEL_USE_ARCH_DEFAULT_CONFIG is not set
-# BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG is not set
-BR2_LINUX_KERNEL_DEFCONFIG="imx_v8"
+BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG=y
+BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE="board/stonehex/evk_i.mx8m/imx8_linux_6.1.55_defconfig"
 BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES=""
 BR2_LINUX_KERNEL_CUSTOM_LOGO_PATH=""
 BR2_LINUX_KERNEL_IMAGE=y
@@ -504,7 +504,7 @@ BR2_LINUX_KERNEL_GZIP=y
 # BR2_LINUX_KERNEL_ZSTD is not set
 BR2_LINUX_KERNEL_DTS_SUPPORT=y
 # BR2_LINUX_KERNEL_DTB_IS_SELF_BUILT is not set
-BR2_LINUX_KERNEL_INTREE_DTS_NAME="freescale/imx8mm-evk freescale/imx8mm-evk-revb-qca-wifi freescale/imx8mm-ddr4-evk-revb-rm67191.dtb"
+BR2_LINUX_KERNEL_INTREE_DTS_NAME="freescale/imx8mm-evk freescale/imx8mm-evk-revb-qca-wifi freescale/imx8mm-ddr4-evk-revb-rm67191"
 BR2_LINUX_KERNEL_CUSTOM_DTS_PATH=""
 # BR2_LINUX_KERNEL_DTB_KEEP_DIRNAME is not set
 # BR2_LINUX_KERNEL_DTB_OVERLAY_SUPPORT is not set
@@ -2784,8 +2784,8 @@ BR2_TARGET_ROOTFS_EXT2_GZIP=y
 # BR2_TARGET_ROOTFS_ROMFS is not set
 # BR2_TARGET_ROOTFS_SQUASHFS is not set
 BR2_TARGET_ROOTFS_TAR=y
-BR2_TARGET_ROOTFS_TAR_NONE=y
-# BR2_TARGET_ROOTFS_TAR_GZIP is not set
+# BR2_TARGET_ROOTFS_TAR_NONE is not set
+BR2_TARGET_ROOTFS_TAR_GZIP=y
 # BR2_TARGET_ROOTFS_TAR_BZIP2 is not set
 # BR2_TARGET_ROOTFS_TAR_LZ4 is not set
 # BR2_TARGET_ROOTFS_TAR_LZMA is not set
