@@ -29,10 +29,10 @@ index 0000000000..c52e1c94a7
 +
 diff --git a/board/stonehex/evk_i.mx8m/evk_i.mx8m_sthfs-prepare.sh b/board/stonehex/evk_i.mx8m/evk_i.mx8m_sthfs-prepare.sh
 new file mode 100755
-index 0000000000..7b0cc57d33
+index 0000000000..fd71d23c53
 --- /dev/null
 +++ b/board/stonehex/evk_i.mx8m/evk_i.mx8m_sthfs-prepare.sh
-@@ -0,0 +1,33 @@
+@@ -0,0 +1,38 @@
 +#!/bin/bash
 +
 +echo "==== Starting customize fs ===="
@@ -52,9 +52,14 @@ index 0000000000..7b0cc57d33
 +fi
 +popd
 +
++echo "==== Copying overlay ===="
 +cp -a ${BR2_DL_DIR}/${FS_PKG}/overlay/* ${ROOTFS_PATH}/.
 +cp ${BOARD_PATH}/inittab ${ROOTFS_PATH}/etc/.
++rm -rf ${ROOTFS_PATH}/etc/sysconfig
++mkdir ${ROOTFS_PATH}/etc/sysconfig
++
 +IP=`hostname -I | awk '{print $1}'`
++echo "==== Creating system_vars in ${ROOTFS_PATH}/etc/sysconfig ===="
 +echo "REFERENCE_SERVER=$IP" > ${ROOTFS_PATH}/etc/sysconfig/system_vars
 +echo "BOOT_DEVICE=mmcblk1p1" >> ${ROOTFS_PATH}/etc/sysconfig/system_vars
 +echo "KERNEL_SRC=Image_evk" >> ${ROOTFS_PATH}/etc/sysconfig/system_vars
