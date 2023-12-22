@@ -16809,3 +16809,48 @@ index 0000000000..e1b8a301a2
 +# BR2_BINUTILS_VERSION_2_22 is not set
 +# BR2_PACKAGE_GPU_VIV_BIN_MX6Q is not set
 +# BR2_TARGET_UBOOT_NETWORK is not set
+diff --git a/mksd.sh b/mksd.sh
+new file mode 100755
+index 0000000000..e51b6fd1c6
+--- /dev/null
++++ b/mksd.sh
+@@ -0,0 +1,39 @@
++#!/bin/sh
++IMAGES_PATH=output/images
++populate_boot()
++{
++	sudo rm -rf tt
++	mkdir tt
++	sudo mount -o loop,offset=8388608 ${IMAGES_PATH}/sdcard.img tt
++	echo "Copying file system"
++	sudo cp ${IMAGES_PATH}/uInitrd tt/.
++	echo "Copying boot.scr"
++	sudo cp ${IMAGES_PATH}/boot.scr tt/.
++	ls tt
++	sync
++	sudo umount tt
++	sudo fdisk ${IMAGES_PATH}/sdcard.img<< __EOF__
++d
++2
++n
++p
++2
++147456
++
++t
++2
++b
++w
++__EOF__
++	sync
++	sleep 1
++}
++
++populate_boot
++
++echo "Writing sd"
++sudo dd if=${IMAGES_PATH}/sdcard.img of=/dev/sdb bs=1M status=progress
++sync
++echo y | sudo mkfs.vfat -F 16 /dev/sdb2 -n DATA 
++echo "Done"
++
