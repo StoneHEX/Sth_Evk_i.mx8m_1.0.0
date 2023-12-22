@@ -1,4 +1,4 @@
-# SthRevVar_i.mx8m_1.0.0<br>
+# Sth_Evk_i.mx8m_1.0.0<br>
 This repo provides the patches and necessary files to patch buildroot 2023.08.4.<br>
 The files are stored on this repo to have something stable and checked trough variations in the cloned repositories.<br>
 
