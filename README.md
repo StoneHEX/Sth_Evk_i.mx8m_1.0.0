@@ -9,7 +9,7 @@ The files are stored on this repo to have something stable and checked trough va
 3: rename buildroot obtained directory in step 1 with the name you like and enter it<br>
 4: if you cloned the original buildroot checkout branch 2023.08.4 : <b>git checkout 2023.08.4</b><br>
 5: apply patch with <b>patch -p1 < ../i.mx8evk_br-2023.08.4_001.patch</b><br>
-6: configure with <b>make sth_evk_i.mx8m_defconfig</b><br>
+6: configure with <br>text only version : <b>make sth_evk_i.mx8m_defconfig</b><br>graphic support : <b>make sth_evk_i.mx8m_x_wailand_defconfig</b><br>
 7: make with <b>make</b><br>
 ### WARNING : check your device is /dev/sdb , mksd.sh defaults to it so change it if different !!!
 ### WARNING : selecting the wrong device can destroy your hard disk
