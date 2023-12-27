@@ -16811,13 +16811,13 @@ index 0000000000..e1b8a301a2
 +# BR2_TARGET_UBOOT_NETWORK is not set
 diff --git a/configs/sth_evk_i.mx8m_x_wailand_defconfig b/configs/sth_evk_i.mx8m_x_wailand_defconfig
 new file mode 100644
-index 0000000000..9be2075db1
+index 0000000000..d5f37076b8
 --- /dev/null
 +++ b/configs/sth_evk_i.mx8m_x_wailand_defconfig
-@@ -0,0 +1,4061 @@
+@@ -0,0 +1,4049 @@
 +#
 +# Automatically generated file; DO NOT EDIT.
-+# Buildroot 2023.08.4-dirty Configuration
++# Buildroot 2023.08.4 Configuration
 +#
 +BR2_HAVE_DOT_CONFIG=y
 +BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -17396,6 +17396,7 @@ index 0000000000..9be2075db1
 +# kodi needs python3 w/ .py modules, a uClibc or glibc toolchain w/ C++, threads, wchar, dynamic library, gcc >= 9.x
 +#
 +BR2_PACKAGE_KODI_PLATFORM_SUPPORTS=y
++BR2_PACKAGE_KODI_PLATFORM_SUPPORTS_WAYLAND=y
 +BR2_PACKAGE_KODI_PLATFORM_SUPPORTS_X11=y
 +# BR2_PACKAGE_LAME is not set
 +# BR2_PACKAGE_MADPLAY is not set
@@ -18016,10 +18017,7 @@ index 0000000000..9be2075db1
 +# BR2_PACKAGE_PCMANFM is not set
 +# BR2_PACKAGE_RDESKTOP is not set
 +# BR2_PACKAGE_SYNERGY is not set
-+
-+#
-+# vte needs an OpenGL or an OpenGL-EGL/wayland backend
-+#
++# BR2_PACKAGE_VTE is not set
 +# BR2_PACKAGE_WMCTRL is not set
 +# BR2_PACKAGE_X11VNC is not set
 +# BR2_PACKAGE_XDOTOOL is not set
@@ -18171,9 +18169,9 @@ index 0000000000..9be2075db1
 +BR2_PACKAGE_PROVIDES_LIBOPENVG="imx-gpu-viv"
 +# BR2_PACKAGE_IMX_GPU_G2D is not set
 +BR2_PACKAGE_IMX_GPU_VIV=y
-+BR2_PACKAGE_IMX_GPU_VIV_OUTPUT_FB=y
-+# BR2_PACKAGE_IMX_GPU_VIV_OUTPUT_WL is not set
-+BR2_PACKAGE_IMX_GPU_VIV_OUTPUT="fb"
++# BR2_PACKAGE_IMX_GPU_VIV_OUTPUT_FB is not set
++BR2_PACKAGE_IMX_GPU_VIV_OUTPUT_WL=y
++BR2_PACKAGE_IMX_GPU_VIV_OUTPUT="wayland"
 +# BR2_PACKAGE_IMX_GPU_VIV_EXAMPLES is not set
 +# BR2_PACKAGE_IMX_GPU_VIV_GMEM_INFO is not set
 +BR2_PACKAGE_KERNEL_MODULE_IMX_GPU_VIV=y
@@ -18607,10 +18605,7 @@ index 0000000000..9be2075db1
 +#
 +# BR2_PACKAGE_LIBGTA is not set
 +# BR2_PACKAGE_LIBGTK2 is not set
-+
-+#
-+# libgtk3 needs an OpenGL or an OpenGL-EGL/wayland backend
-+#
++# BR2_PACKAGE_LIBGTK3 is not set
 +# BR2_PACKAGE_LIBJXL is not set
 +# BR2_PACKAGE_LIBMEDIAART is not set
 +# BR2_PACKAGE_LIBMNG is not set
@@ -18630,6 +18625,7 @@ index 0000000000..9be2075db1
 +# BR2_PACKAGE_OPENCV3 is not set
 +# BR2_PACKAGE_OPENCV4 is not set
 +BR2_PACKAGE_HAS_LIBEGL=y
++BR2_PACKAGE_HAS_LIBEGL_WAYLAND=y
 +BR2_PACKAGE_HAS_LIBGBM=y
 +BR2_PACKAGE_LIBGBM_HAS_FEATURE_FORMAT_MODIFIER_PLANE_COUNT=y
 +BR2_PACKAGE_LIBGBM_HAS_FEATURE_DMA_BUF=y
@@ -18645,15 +18641,13 @@ index 0000000000..9be2075db1
 +# BR2_PACKAGE_STB is not set
 +# BR2_PACKAGE_TIFF is not set
 +# BR2_PACKAGE_UNCLUTTER_XFIXES is not set
++BR2_PACKAGE_WAFFLE_SUPPORTS_WAYLAND=y
 +BR2_PACKAGE_WAFFLE_SUPPORTS_X11_EGL=y
 +# BR2_PACKAGE_WAFFLE is not set
 +BR2_PACKAGE_WAYLAND=y
 +BR2_PACKAGE_WAYLAND_PROTOCOLS=y
 +# BR2_PACKAGE_WAYLAND_UTILS is not set
-+
-+#
-+# waylandpp needs an OpenGL-EGL/wayland backend, a toolchain w/ gcc >= 4.9, host gcc >= 4.9, C++ support
-+#
++# BR2_PACKAGE_WAYLANDPP is not set
 +BR2_PACKAGE_WEBKITGTK_ARCH_SUPPORTS=y
 +
 +#
@@ -18665,15 +18659,9 @@ index 0000000000..9be2075db1
 +# wlroots needs udev, EGL w/ Wayland backend and OpenGL ES support
 +#
 +# BR2_PACKAGE_WOFF2 is not set
-+
-+#
-+# wpebackend-fdo needs a toolchain w/ C++, wchar, threads, dynamic library and an OpenEGL-capable Wayland backend
-+#
++# BR2_PACKAGE_WPEBACKEND_FDO is not set
 +BR2_PACKAGE_WPEWEBKIT_ARCH_SUPPORTS=y
-+
-+#
-+# wpewebkit needs an OpenGL ES w/ EGL-capable Wayland backend
-+#
++# BR2_PACKAGE_WPEWEBKIT is not set
 +# BR2_PACKAGE_ZBAR is not set
 +# BR2_PACKAGE_ZXING_CPP is not set
 +
@@ -19852,7 +19840,7 @@ index 0000000000..9be2075db1
 +BR2_TARGET_ROOTFS_EXT2_GEN=4
 +BR2_TARGET_ROOTFS_EXT2_REV=1
 +BR2_TARGET_ROOTFS_EXT2_LABEL="rootfs"
-+BR2_TARGET_ROOTFS_EXT2_SIZE="120M"
++BR2_TARGET_ROOTFS_EXT2_SIZE="250M"
 +BR2_TARGET_ROOTFS_EXT2_INODES=0
 +BR2_TARGET_ROOTFS_EXT2_INODE_SIZE=256
 +BR2_TARGET_ROOTFS_EXT2_RESBLKS=5
