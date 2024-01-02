@@ -6,7 +6,8 @@ The files are stored on this repo to have something stable and checked trough va
 
 1: clone buildroot : <b>git clone https://github.com/buildroot/buildroot.git</b> or <b>git clone https://github.com/StoneHEX/buildroot-2023.08.4</b><br>
 2: download <b>i.mx8evk_br-2023.08.4_001.patch</b> from here :<br>
-https://github.com/StoneHEX/SthRevVar_i.mx8m_1.0.0/blob/master/i.mx8evk_br-2023.08.4_001.patch<br>
+https://github.com/StoneHEX/Sth_Evk_i.mx8m_1.0.0/blob/master/i.mx8evk_br-2023.08.4_001.patch
+<br>
 3: rename buildroot obtained directory in step 1 with the name you like and enter it<br>
 4: if you cloned the original buildroot checkout branch 2023.08.4 : <b>git checkout 2023.08.4</b><br>
 5: apply patch with <b>patch -p1 < ../i.mx8evk_br-2023.08.4_001.patch</b><br>
